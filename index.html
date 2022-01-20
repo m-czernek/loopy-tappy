@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="main.css" media="screen" />
+
+  <title>JS Bin</title>
+</head>
+<body>
+    <script src="./main.js"></script>
+    <div id="canvas">
+        <svg viewBox="0 0 150 150">
+            <rect id="bg" x="0" y="0" height="150" width="150" fill="none" />
+            <text 
+                text-anchor="middle"
+                x="75" 
+                y="75"
+                id="score"></text>
+            <path 
+                id="arc1" 
+                fill="none" 
+                stroke="red" 
+                stroke-width="4" 
+                stroke-linejoin="round"
+				stroke-linecap="round"/>
+            <circle
+                            id="ball"
+                            cx="75"
+                            cy="75"
+                            r="2"
+                            fill="#2C3D51"
+                        />
+          </svg>
+        </div>
+</body>
+</html>

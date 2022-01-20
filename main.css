@@ -1,0 +1,33 @@
+svg {
+    width: 100%;
+}
+
+#score {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#canvas {
+    display:flex;
+    height: 100vh;
+    width: 100%;
+    max-width: 640px;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#ball {
+    transform: translateZ(0);
+    animation: rotate 3000ms infinite linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg) translate(10%) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translate(10%) rotate(-360deg);
+    }
+}
