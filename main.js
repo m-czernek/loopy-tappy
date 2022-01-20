@@ -35,19 +35,19 @@ function getBallAngle() {
     const bg = document.getElementById("bg").getBoundingClientRect();
     const bgCenter = { x: bg.left + bg.width / 2, y: bg.top + bg.height / 2 };
     const ball = document.getElementById("ball").getBoundingClientRect();
-	const ballCenter = { x: ball.left + ball.width / 2, y: ball.top + ball.height / 2 };
-	return angle(bgCenter.x, bgCenter.y, ballCenter.x, ballCenter.y);
+    const ballCenter = { x: ball.left + ball.width / 2, y: ball.top + ball.height / 2 };
+    return angle(bgCenter.x, bgCenter.y, ballCenter.x, ballCenter.y);
 }
 
 function isBallInArc() {
     // console.log(`ball angle: ${getBallAngle()} + ${window.arch.archStart}`)
-    return (getBallAngle() + 5 > window.arch.archStart) && (getBallAngle() - 5 < window.arch.archEnd)
+    return (getBallAngle() + 7 > window.arch.archStart) && (getBallAngle() - 7 < window.arch.archEnd)
 }
 
 function randomizeArch() {
     let archStart = Math.floor(Math.random() * 300)
     let archEnd = archStart + Math.max(Math.floor(Math.random() * 59),20);
-    document.getElementById("arc1").setAttribute("d", describeArc(75, 75, 15, archStart, archEnd)); 
+    document.getElementById("arc").setAttribute("d", describeArc(50, 50, 15, archStart, archEnd)); 
     window.arch = { archStart, archEnd };
 }
 
@@ -73,10 +73,11 @@ function increaseBallSpeed() {
 
 window.onload = function() {
     randomizeArch();
-    document.getElementById("score").textContent = "0"
+    document.getElementById("score").textContent = "0";
 };
 
-window.onclick = () => {
+window.onclick = (e) => {
+    e.preventDefault();
     if(isBallInArc()) {
         randomizeArch();
         incrementScore();

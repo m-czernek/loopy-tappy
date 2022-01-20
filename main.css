@@ -25,9 +25,9 @@ svg {
 
 @keyframes rotate {
     from {
-        transform: rotate(0deg) translate(10%) rotate(0deg);
+        transform: rotate(0deg) translate(15%) rotate(0deg);
     }
     to {
-        transform: rotate(360deg) translate(10%) rotate(-360deg);
+        transform: rotate(360deg) translate(15%) rotate(-360deg);
     }
 }
