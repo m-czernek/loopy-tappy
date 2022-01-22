@@ -16,7 +16,8 @@
                 text-anchor="middle"
                 x="50" 
                 y="50"
-                id="score"></text>
+                id="score"
+                class="font"></text>
             <path 
                 id="arc" 
                 fill="none" 
@@ -31,6 +32,17 @@
                             r="2"
                             fill="#2C3D51"
                         />
+            <polygon onclick="startGame()" id="play" points="50,75 50,85 60,80" style="fill:black;stroke:black; stroke-linejoin: round; stroke-width:2" />
+            <text 
+                text-anchor="middle"
+                x="50" 
+                y="90"
+                class="font help">Click anywhere when the ball</text>
+            <text
+                text-anchor="middle"
+                x="50"
+                y="95"
+                class="font help">is in the highlighted area</text>
           </svg>
         </div>
 </body>

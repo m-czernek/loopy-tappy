@@ -2,8 +2,13 @@ svg {
     width: 100%;
 }
 
-#score {
+.font {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.help {
+    font-size: 2px;
+    fill: rgba(154, 151, 151, 0.879);
 }
 
 #canvas {
@@ -21,6 +26,7 @@ svg {
 #ball {
     transform: translateZ(0);
     animation: rotate 3000ms infinite linear;
+    animation-play-state: paused;
 }
 
 @keyframes rotate {
