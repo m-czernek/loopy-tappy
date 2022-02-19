@@ -83,10 +83,10 @@ function startBall() {
 }
 
 function increaseBallSpeed() {
-  var current =
-    document.getElementById("ball").style.animationDuration || "3000ms";
+  var current = document.getElementById("ball")
+    .style.animationDuration || "3000ms";
   current = parseInt(current.substring(0, current.length - 2));
-  document.getElementById("ball").style.animationDuration = `${current - 25}ms`;
+  document.getElementById("ball").style.animationDuration = `${current - 15}ms`;
 }
 
 function startGame() {
@@ -98,10 +98,15 @@ function startGame() {
   window.state = "started";
 }
 
+function displayHelp() {
+    Array.from(document.getElementsByClassName("help")).forEach((element) => element.style.display = "block");
+    document.getElementById("play").style.display = "block";
+}
+
 window.onload = function () {
     document
-    .getElementById("arc")
-    .setAttribute("d", describeArc(50, 50, 15, 180, 275));
+      .getElementById("arc")
+      .setAttribute("d", describeArc(50, 50, 15, 180, 275));
   window.state = "stopped";
 };
 
@@ -116,6 +121,9 @@ window.addEventListener("mousedown", (e) => {
       console.log("Ending game.")
       window.state = "stopped";
       stopBall();
+      displayHelp();
     }
+  } else {
+      startGame();
   }
 });
